@@ -1,0 +1,57 @@
+<p id="notice" class="noprint"><%= notice %></p>
+<script>
+  $(function() {
+    function encode_url(url, parameters) {
+      var parametersEncoded = $.param(parameters);
+      var seperator = url.indexOf('?') == -1 ? "?" : "&";
+  
+      return(url + seperator + parametersEncoded);
+    }
+
+
+    $("#autocomplete").autocomplete({
+      autoFocus: false,
+      delay: 1,
+      source: "<%= search_index_path(:json) %>", // то же самое что и "/search/index.json",
+      minLength: 2,
+      select: function( event, ui ) {
+        // просмотр данных существующего пациента: GET /patients/:id
+        var url = "<%= patients_path %>" + "/" + ui.item.id;
+        $(location).attr("href", url);
+      }
+    });
+    
+    $("#autocomplete").keypress(function(e) {
+      var keycode = (e.keyCode ? e.keyCode : e.which);
+      if(keycode == 13)
+      {
+        var val = $("#autocomplete").val();
+        // создание нового пациента: GET /patients/new + параметр term
+        url = "<%= new_patient_path %>"
+        url = encode_url(url, {term: val});
+        $(location).attr("href", url);
+      }
+    });
+  });
+</script>
+<style>
+body {
+  text-align: center;
+  margin: 0 auto;
+}
+.autocomplete_field {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -150px;
+}
+ul.ui-autocomplete li.ui-menu-item {
+  text-align:left;
+}
+</style>
+
+<div class="autocomplete_field">
+  <label for="autocomplete">Введите данные пациента (Ф.И.О., дата рождения) или выберите существующего из базы: </label><br />
+  <input id="autocomplete" size="70"/>
+</div>

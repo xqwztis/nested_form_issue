@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  // инициализировать календарь
+  $(function() {
+    $('#datepicker').datepicker(
+      $.extend(      
+        $.datepicker.regional[ "ru" ],
+        {
+          dateFormat: "yy-mm-dd",
+          yearRange: "-113:+0",
+          changeMonth: true,
+          changeYear: true
+        }
+      )
+    );
+  });
+</script>
+<h1>Гинекологическое обследование</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', gynecologic_examinations_path %>

@@ -1,0 +1,38 @@
+<p id="notice" class="noprint"><%= notice %></p>
+<h1>Карта пациента</h1>
+<p>
+  <b>ФИО:</b>
+  <%= format_name(@patient) %>
+</p>
+
+<p>
+  <b>Возраст:</b>
+  <%= age(@patient.dob) %>
+</p>
+
+<p>
+  <b>Телефон:</b>
+  <%= @patient.phone %>
+</p>
+
+<p>
+  <b>Адрес:</b>
+  <%= format_address(@patient.address) %>
+</p>
+
+<p>
+  <b>Предыдущие обследования:</b><br />
+  <% @patient.patient_examinations.order(:created_at).each do |pe| %>
+    <%= link_to pe.examination_type.to_s, gynecologic_examination_path(pe.examination) %>
+    <%= l pe.created_at, :format => :long %><br />
+  <% end %>
+  
+</p>
+
+<p class="noprint">
+  <%= link_to 'Новое гинекологическое обследование', new_gynecologic_examination_path(:patient_id => @patient.id) %>
+<p>
+
+<p class="noprint">
+  <%= link_to 'Редактировать', edit_patient_path(@patient) %>
+</p>

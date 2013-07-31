@@ -1,0 +1,14 @@
+<p>
+  <%= orientation %> яичник.<br />
+  Длина <%= ovary.length %> мм.<br />
+  Толщина <%= ovary.thickness %> мм.<br />
+  Ширина <%= ovary.width %> мм.<br />
+
+  Образования:<br />
+  <% ovary.formations.each do |formation| %>
+    &bull; размер <%= formation.size %> мм<br />
+    <% formation.chambers.each do |chamber| %>
+      &#9;&#9; Размер <%= chamber.size %><br />
+    <% end %>
+  <% end %>
+</p>

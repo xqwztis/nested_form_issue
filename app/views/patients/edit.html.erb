@@ -1,0 +1,34 @@
+<script type="text/javascript">
+  // инициализировать календарь
+  $(function() {
+    $('#datepicker').datepicker(
+      $.extend(      
+        $.datepicker.regional[ "ru" ],
+        {
+          dateFormat: "yy-mm-dd",
+          yearRange: "-113:+0",
+          changeMonth: true,
+          changeYear: true
+        }
+      )
+    );
+  });
+  // перевести фокус на первое пустое поле
+  $(function() {
+    if( !$("#patient_last_name").val() ) {
+      $("#patient_last_name").focus();
+    } else if( !$("#patient_first_name").val() ) {
+      $("#patient_first_name").focus();
+    } else if( !$("#patient_patronymic").val() ) {
+      $("#patient_patronymic").focus();
+    } else if( !$("#datepicker").val() ) {
+      $("#datepicker").focus();
+    };
+  });
+</script>
+<h1>Редактирование пациента</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Показать', @patient %> |
+<%= link_to 'Назад', patients_path %>

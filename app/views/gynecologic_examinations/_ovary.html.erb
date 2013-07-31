@@ -1,0 +1,41 @@
+<div class="fields">
+  <span class="on_one_line">
+    <%= f.label :length %><br />
+    <%= f.number_field :length, :style => "width:50px;", :step => "any" %>
+  </span>
+  <span class="on_one_line">
+    <%= f.label :thickness %><br />
+    <%= f.number_field :thickness, :style => "width:50px;", :step => "any" %>
+  </span>
+  <span class="on_one_line">
+    <%= f.label :width %><br />
+    <%= f.number_field :width, :style => "width:50px;", :step => "any" %>
+  </span>
+</div>
+<div class="fields">
+  Образования:
+  <%= f.fields_for :formations do |builder| %>
+    <span class="on_one_line">
+      <%= builder.label :size %><br />
+      <%= builder.number_field :size, :style => "width:50px;", :step => "any" %>
+    </span>
+    <span class="on_one_line"><br />
+      <%= f.link_to_remove "Удалить" %>
+    </span>
+    <div class="fields">
+      <%= builder.fields_for :chambers do |ch| %>
+        <span class="on_one_line">&nbsp;&nbsp;&nbsp;&nbsp;
+        </span>
+        <span class="on_one_line">
+          <%= ch.label :size %><br />
+          <%= ch.number_field :size, :style => "width:50px;", :step => "any" %>
+        </span>
+        <span class="on_one_line"><br />
+          <%= ch.link_to_remove "Удалить" %>
+        </span>
+      <% end %>
+      <%= builder.link_to_add "Добавить камеру", :chambers %>
+    </div>
+  <% end %>
+  <%= f.link_to_add "Добавить образование", :formations %>
+</div>

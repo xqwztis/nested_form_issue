@@ -1,0 +1,18 @@
+<div class="field">
+  <span class="on_one_line">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, :size => 15, :value => @patient.address.city || "Киров" %>
+  </span>
+  <span class="on_one_line">
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </span>
+  <span class="on_one_line">
+    <%= f.label :house %><br />
+    <%= f.text_field :house, :size => 3 %>
+  </span>
+  <span class="on_one_line">
+    <%= f.label :appartment %><br />
+    <%= f.text_field :appartment, :size => 2 %>
+  </span>
+</div>

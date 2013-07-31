@@ -1,0 +1,447 @@
+ru:
+  date:
+    abbr_day_names:
+    - Вс
+    - Пн
+    - Вт
+    - Ср
+    - Чт
+    - Пт
+    - Сб
+    abbr_month_names:
+    - 
+    - янв.
+    - февр.
+    - марта
+    - апр.
+    - мая
+    - июня
+    - июля
+    - авг.
+    - сент.
+    - окт.
+    - нояб.
+    - дек.
+    day_names:
+    - воскресенье
+    - понедельник
+    - вторник
+    - среда
+    - четверг
+    - пятница
+    - суббота
+    formats:
+      default: ! '%d.%m.%Y'
+      long: ! '%d %B %Y'
+      short: ! '%d %b'
+    month_names:
+    - 
+    - января
+    - февраля
+    - марта
+    - апреля
+    - мая
+    - июня
+    - июля
+    - августа
+    - сентября
+    - октября
+    - ноября
+    - декабря
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: около %{count} часов
+        many: около %{count} часов
+        one: около %{count} часа
+        other: около %{count} часа
+      about_x_months:
+        few: около %{count} месяцев
+        many: около %{count} месяцев
+        one: около %{count} месяца
+        other: около %{count} месяца
+      about_x_years:
+        few: около %{count} лет
+        many: около %{count} лет
+        one: около %{count} года
+        other: около %{count} лет
+      almost_x_years:
+        one: почти 1 год
+        few: почти %{count} года
+        many: почти %{count} лет
+        other: почти %{count} лет
+      half_a_minute: меньше минуты
+      less_than_x_minutes:
+        few: меньше %{count} минут
+        many: меньше %{count} минут
+        one: меньше %{count} минуты
+        other: меньше %{count} минуты
+      less_than_x_seconds:
+        few: меньше %{count} секунд
+        many: меньше %{count} секунд
+        one: меньше %{count} секунды
+        other: меньше %{count} секунды
+      over_x_years:
+        few: больше %{count} лет
+        many: больше %{count} лет
+        one: больше %{count} года
+        other: больше %{count} лет
+      x_days:
+        few: ! '%{count} дня'
+        many: ! '%{count} дней'
+        one: ! '%{count} день'
+        other: ! '%{count} дня'
+      x_minutes:
+        few: ! '%{count} минуты'
+        many: ! '%{count} минут'
+        one: ! '%{count} минуту'
+        other: ! '%{count} минуты'
+      x_months:
+        few: ! '%{count} месяца'
+        many: ! '%{count} месяцев'
+        one: ! '%{count} месяц'
+        other: ! '%{count} месяца'
+      x_seconds:
+        few: ! '%{count} секунды'
+        many: ! '%{count} секунд'
+        one: ! '%{count} секундy'
+        other: ! '%{count} секунды'
+    prompts:
+      day: День
+      hour: Часов
+      minute: Минут
+      month: Месяц
+      second: Секунд
+      year: Год
+  errors: &errors
+    format: ! '%{attribute} %{message}'
+    messages:
+      accepted: нужно подтвердить
+      blank: не может быть пустым
+      confirmation: не совпадает с подтверждением
+      empty: не может быть пустым
+      equal_to: должно иметь лишь значение, равное %{count}
+      even: может иметь лишь нечетное значение
+      exclusion: имеет зарезервированное значение
+      greater_than: должно иметь значение большее %{count}
+      greater_than_or_equal_to: должно иметь значение большее или равное %{count}
+      inclusion: имеет непредусмотренное значение
+      invalid: имеет неверное значение
+      less_than: должно иметь значение меньшее чем %{count}
+      less_than_or_equal_to: должно иметь значение меньшее или равное %{count}
+      not_a_number: не является числом
+      not_an_integer: не является целым числом
+      odd: может иметь лишь четное значение
+      record_invalid: ! 'Возникли ошибки: %{errors}'
+      taken: уже существует
+      too_long:
+        few: слишком большой длины (не может быть больше чем %{count} символа)
+        many: слишком большой длины (не может быть больше чем %{count} символов)
+        one: слишком большой длины (не может быть больше чем %{count} символ)
+        other: слишком большой длины (не может быть больше чем %{count} символа)
+      too_short:
+        few: недостаточной длины (не может быть меньше %{count} символов)
+        many: недостаточной длины (не может быть меньше %{count} символов)
+        one: недостаточной длины (не может быть меньше %{count} символа)
+        other: недостаточной длины (не может быть меньше %{count} символа)
+      wrong_length:
+        few: неверной длины (должно быть длиной ровно %{count} символа)
+        many: неверной длины (должно быть длиной ровно %{count} символов)
+        one: неверной длины (должно быть длиной ровно %{count} символ)
+        other: неверной длины (должно быть длиной ровно %{count} символа)
+    template:
+      body: ! 'Проблемы возникли со следующими полями:'
+      header:
+        few: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+        many: ! '%{model}: сохранение не удалось из-за %{count} ошибок'
+        one: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+        other: ! '%{model}: сохранение не удалось из-за %{count} ошибки'
+  helpers:
+    select:
+      prompt: ! 'Выберите: '
+    submit:
+      create: Создать %{model}
+      submit: Сохранить %{model}
+      update: Сохранить %{model}
+    label:
+      patient:
+        dob: Дата рождения
+        first_name: Имя
+        last_name: Фамилия
+        patronymic: Отчество
+        phone: Телефон
+        sex: Пол
+        address: Адрес
+      address:
+        city: Город
+        street: Улица
+        house: Номер дома
+        appartment: Квартира
+      gynecologic_examination:
+        menstruation_date: Дата последней менструации
+        menstruation_day: День менструального цикла
+        uterine_body_visibility_id: визуализация
+        uterine_body_detection_position_id: в каком положении
+        uterine_boundary_id: границы
+        uterine_adumbration_id: контуры
+        uterine_shape_id: форма
+        uterine_size_id: размеры
+        uterine_length: длина
+        uterine_anteroposterior: передне-задний
+        uterine_width: ширина
+        myometric_structure_change_id: структура
+        myometrium_anterior_wall_thickness: толщина передней стенки
+        myometrium_posterior_wall_thickness: толщина задней стенки
+        endometrium_echostructure_change_id: эхоструктура
+        endometrial_thickness: толщина
+        endometrial_boundary_id: границы
+        endometrial_adumbration_id: контуры
+        endometrium_phase_id: эндометрий соответствует
+        endometrium_echostructure_change_type_id: характер изменений м-эхо
+        uterine_cavity_deformation_id: деформации
+        uterine_cavity_size_change_id: изменения в размерах
+        uterine_cavity_size: размеры
+        is_uterine_cavity_node_present: узел
+        cervix_visibility_id: визуализация
+        cervix_size: размер
+        is_cervix_of_normal_size: обычных размеров
+        cervix_structure_change_id: структура
+        endocervix_cyst_min_size: от
+        endocervix_cyst_max_size: до
+        is_endocervix_cyst_multiple: множественная
+      gynecologic_examination/ovary:
+        visibility_id: визуализация
+        length: длина
+        thickness: толщина
+        width: ширина
+        size_id: размеры
+        structure_id: структура
+        is_follicle_visible: определяются
+      gynecologic_examination/ovary/follicle:
+        min_size: от
+        max_size: до
+        amount: количество
+      gynecologic_examination/ovary/formation:
+        shape_id: форма
+        boundary_id: границы
+        adumbration_id: контуры
+        structure_id: структура
+        content_id: содержимое
+        size: размеры
+        wall_thickness: толщина стенки
+        comment: комментарий
+      gynecologic_examination/myometric_structure_node:
+        localization_id: локализация
+        depth_localization_id: по глубине
+        size: размер
+        comment: комментарий
+      gynecologic_examination/endometrium_echostructure_hyperechoic_inclusion:
+        size: размер
+        localization_id: локализация
+        comment: комментарий
+  number:
+    currency:
+      format:
+        delimiter: ! ' '
+        format: ! '%n %u'
+        precision: 2
+        separator: ','
+        significant: false
+        strip_insignificant_zeros: false
+        unit: руб.
+    format:
+      delimiter: ! ' '
+      precision: 3
+      separator: ','
+      significant: false
+      strip_insignificant_zeros: false
+    human:
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          billion:
+            few: миллиардов
+            many: миллиардов
+            one: миллиард
+            other: миллиардов
+          million:
+            few: миллионов
+            many: миллионов
+            one: миллион
+            other: миллионов
+          quadrillion:
+            few: квадриллионов
+            many: квадриллионов
+            one: квадриллион
+            other: квадриллионов
+          thousand:
+            few: тысяч
+            many: тысяч
+            one: тысяча
+            other: тысяч
+          trillion:
+            few: триллионов
+            many: триллионов
+            one: триллион
+            other: триллионов
+          unit: ''
+      format:
+        delimiter: ''
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: false
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            few: байта
+            many: байт
+            one: байт
+            other: байта
+          gb: ГБ
+          kb: КБ
+          mb: МБ
+          tb: ТБ
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: ! ' и '
+      two_words_connector: ! ' и '
+      words_connector: ! ', '
+  time:
+    am: утра
+    formats:
+      default: ! '%a, %d %b %Y, %H:%M:%S %z'
+      long: ! '%d %B %Y, %H:%M'
+      short: ! '%d %b, %H:%M'
+    pm: вечера
+  # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
+  activemodel:
+    errors:
+      <<: *errors
+  activerecord:
+    errors:
+      <<: *errors
+    models:
+      gynecologic_examination: гинекологическое обследование
+      patient: пациент
+    attributes:
+      gynecologic_examination:
+        menstruation_date: Дата последней менструации
+        menstruation_day: День менструального цикла
+        uterine_body_visibility: Визуализация тела матки
+        uterine_body_visibility_id: Визуализация тела матки
+        uterine_body_detection_position: Положение, в котором определяется тело матки
+        uterine_body_detection_position_id: Положение, в котором определяется тело матки
+        uterine_boundary: Границы матки
+        uterine_boundary_id: Границы матки
+        uterine_adumbration: Контуры матки
+        uterine_adumbration_id: Контуры матки
+        uterine_shape_id: Форма матки
+        uterine_shape: Форма матки
+        uterine_size_id: Размеры матки
+        uterine_size: Размеры матки
+        uterine_length: Длина матки
+        uterine_anteroposterior: Передне-задний матки
+        uterine_width: Ширина матки
+        myometric_structure_change_id: Изменения в структуре миометрия
+        myometric_structure_change: Изменения в структуре миометрия
+        myometrium_anterior_wall_thickness: Толщина передней стенки миометрия
+        myometrium_posterior_wall_thickness: Толщина задней стенки миометрия
+        endometrium_echostructure_change_id: Изменения эхоструктуры эндометрия
+        endometrium_echostructure_change: Изменения эхоструктуры эндометрия
+        endometrial_thickness: Толщина эндометрия
+        endometrial_boundary: Границы эндометрия
+        endometrial_boundary_id: Границы эндометрия
+        endometrial_adumbration: Контуры эндометрия
+        endometrial_adumbration_id: Контуры эндометрия
+        endometrium_phase: Соответствие эндометрия фазе м.ц.
+        endometrium_phase_id: Соответствие эндометрия фазе м.ц.
+        endometrium_echostructure_change_type: Характер изменений эхоструктуры эндометрия
+        endometrium_echostructure_change_type_id: Характер изменений эхоструктуры эндометрия
+        uterine_cavity_deformation: Деформации полости матки
+        uterine_cavity_deformation_id: Деформации полости матки
+        uterine_cavity_size_change: Изменения в размерах полости матки
+        uterine_cavity_size_change_id: Изменения в размерах полости матки
+        uterine_cavity_size: Размеры полости матки
+        is_uterine_cavity_node_present: Наличие узла в полости матки
+        cervix_visibility: Визуализация шейки
+        cervix_visibility_id: Визуализация шейки
+        cervix_size: Размеры шейки
+        is_cervix_of_normal_size: Шейка обычных размеров
+        cervix_structure_change: Изменения в структуре шейки
+        cervix_structure_change_id: Изменения в структуре шейки
+        endocervix_cyst_min_size: Минимальный размер кисты эндоцервикса
+        endocervix_cyst_max_size: Максимальный размер кисты эндоцервикса
+        is_endocervix_cyst_multiple: Множественность кисты эндоцервикса
+      gynecologic_examination/myometric_structure_nodes:
+        localization: Локализация узла миометрия
+        localization_id: Локализация узла миометрия
+        depth_localization: Локализация узла миометрия по глубине
+        depth_localization_id: Локализация узла миометрия по глубине
+        size: Размер узла миометрия
+        comment: Комментарий к узлу миометрия
+      gynecologic_examination/endometrium_echostructure_hyperechoic_inclusions:
+        localization: Локализация гиперэхогенного включения в эндометрии
+        localization_id: Локализация гиперэхогенного включения в эндометрии
+        size: Размер гиперэхогенного включения в эндометрии
+        comment: Комментарий к гиперэхогенному включению в эндометрии
+      gynecologic_examination/left_ovary:
+        visibility: Визуализация левого яичника
+        visibility_id: Визуализация левого яичника
+        length: Длина левого яичника
+        thickness: Толщина левого яичника
+        width: Ширина левого яичника
+        size: Размеры левого яичника
+        size_id: Размеры левого яичника
+        structure: Структура левого яичника
+        structure_id: Структура левого яичника
+        is_follicle_visible: Фолликул(ы) в левом яичнике
+        follicle: Фолликул(ы) в левом яичнике
+      gynecologic_examination/left_ovary/follicle:
+        amount: Количество фолликулов левого яичника
+        min_size: Минимальный размер фолликула левого яичника
+        max_size: Максимальный размер фолликула левого яичника
+      gynecologic_examination/left_ovary/formations:
+        shape_id: Форма образование в левом яичнике
+        boundary_id: Границы образования в левом яичнике
+        adumbration_id: Контуры образования в левом яичнике
+        structure_id: Структура образования в левом яичнике
+        content_id: Содержимое образования в левом яичнике
+        size: Размеры образования в левом яичнике
+        wall_thickness: Толщина стенки образования в левом яичнике
+        comment: Комментарий к образованию в левом яичнике
+      gynecologic_examination/right_ovary:
+        visibility: Визуализация правого яичника
+        visibility_id: Визуализация правого яичника
+        length: Длина правого яичника
+        thickness: Толщина правого яичника
+        width: Ширина правого яичника
+        size: Размеры правого яичника
+        size_id: Размеры правого яичника
+        structure: Структура правого яичника
+        structure_id: Структура правого яичника
+        is_follicle_visible: Фолликул(ы) в правом яичнике
+        follicle: Фолликул(ы) в правом яичнике
+      gynecologic_examination/right_ovary/follicle:
+        amount: Количество фолликулов правого яичника
+        min_size: Минимальный размер фолликула правого яичника
+        max_size: Максимальный размер фолликула правого яичника
+      gynecologic_examination/right_ovary/formations:
+        shape_id: Форма образование в правом яичнике
+        boundary_id: Границы образования в правом яичнике
+        adumbration_id: Контуры образования в правом яичнике
+        structure_id: Структура образования в правом яичнике
+        content_id: Содержимое образования в правом яичнике
+        size: Размеры образования в правом яичнике
+        wall_thickness: Толщина стенки образования в правом яичнике
+        comment: Комментарий к образованию в правом яичнике
