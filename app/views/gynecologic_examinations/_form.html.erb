@@ -10,64 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <div class="fields">
     <span class="on_one_line">
-      <%= f.label :menstruation_date %><br />
-      <%= f.text_field :menstruation_date, :id => "datepicker", :size => 10 %>
-    </span>
-    <span class="on_one_line">
-      <%= f.label :menstruation_day %><br />
-      <%= f.number_field :menstruation_day, :style => "width:50px;" %>
+      <%= f.label :uterine_length %><br />
+      <%= f.number_field :uterine_length, :style => "width:50px;", :step => "any" %>
     </span>
   </div>
   <fieldset>
-    <legend>Тело матки</legend>
-    <br />
-    <div class="fields">
-      <span class="on_one_line">
-        <%= f.label :uterine_length %><br />
-        <%= f.number_field :uterine_length, :style => "width:50px;", :step => "any" %>
-      </span>
-    </div>
-    <br />
-    <fieldset>
-      <legend>Миометрий</legend>
-      <div class="field">
-        <%= f.fields_for :myometric_structure_nodes do |node_form| %>
-          <%= render "myometric_structure_node", :f => node_form %>
-        <% end %>
-        <%= f.link_to_add "Добавить узел", :myometric_structure_nodes %>
-      </div>
-    </fieldset>
-    <br />
-    <fieldset>
-      <legend>Эндометрий</legend>
-      <div class="field">
-        <%= f.fields_for :endometrium_echostructure_hyperechoic_inclusions do |inclusion_form| %>
-          <%= render "endometrium_echostructure_hyperechoic_inclusion", :f => inclusion_form %>
-        <% end %>
-        <%= f.link_to_add "Добавить гиперэхогенное включение", :endometrium_echostructure_hyperechoic_inclusions %>
-      </div>
-    </fieldset>
-    <br />
-  </fieldset>
-  <br />
-  <fieldset>
-    <legend>Левый яичник</legend>
+    <legend>Left ovary</legend>
     <%= f.fields_for :left_ovary do |builder| %>
-      <%= render "ovary", :f => builder %>
+      <%= render "ovary_form", :f => builder %>
     <% end %>
   </fieldset>
   <br />
   <fieldset>
-    <legend>Правый яичник</legend>
+    <legend>Right ovary</legend>
     <%= f.fields_for :right_ovary do |builder| %>
-      <%= render "ovary", :f => builder %>
+      <%= render "ovary_form", :f => builder %>
     <% end %>
   </fieldset>
-  <%= hidden_field_tag 'patient_id', params[:patient_id] %>
-  <br />
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -15,7 +15,6 @@ class GynecologicExaminationsController < ApplicationController
   # GET /gynecologic_examinations/1.json
   def show
     @gyn_exam = GynecologicExamination.find(params[:id])
-    @patient = @gyn_exam.patients.first
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,19 +44,14 @@ class GynecologicExaminationsController < ApplicationController
   # POST /gynecologic_examinations.json
   def create
     @gyn_exam = GynecologicExamination.new(params[:gynecologic_examination])
-    if params[:patient_id]
-      respond_to do |format|
-        if @gyn_exam.save
-          PatientExamination.create(:patient_id => params[:patient_id], :gynecologic_examination_id => @gyn_exam.id).save
-          format.html { redirect_to @gyn_exam, notice: 'Гинекологическое обследование успешно создано.' }
-          format.json { render json: @gyn_exam, status: :created, location: @gyn_exam }
-        else
-          format.html { render action: "new" }
-          format.json { render json: @gyn_exam.errors, status: :unprocessable_entity }
-        end
+    respond_to do |format|
+      if @gyn_exam.save
+        format.html { redirect_to @gyn_exam, notice: 'Gynecologic examination successfully created.' }
+        format.json { render json: @gyn_exam, status: :created, location: @gyn_exam }
+      else
+        format.html { render action: "new" }
+        format.json { render json: @gyn_exam.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_to :root, notice: 'Невозможно создать отчет без привязки к пациенту. Для создания отчета используйте карту пациента.'
     end
   end
 
@@ -68,7 +62,7 @@ class GynecologicExaminationsController < ApplicationController
 
     respond_to do |format|
       if @gyn_exam.update_attributes(params[:gynecologic_examination])
-        format.html { redirect_to @gyn_exam, notice: 'Данные гинекологического обследования успешно обновлены.' }
+        format.html { redirect_to @gyn_exam, notice: 'Gynecologic examination successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -81,12 +75,10 @@ class GynecologicExaminationsController < ApplicationController
   # DELETE /gynecologic_examinations/1.json
   def destroy
     @gyn_exam = GynecologicExamination.find(params[:id])
-    @patient = @gyn_exam.patients.first
-    PatientExamination.where(:gynecologic_examination_id => @gyn_exam.id).each {|exam| exam.destroy }
     @gyn_exam.destroy
 
     respond_to do |format|
-      format.html { redirect_to patient_path(@patient) }
+      format.html { redirect_to gynecologic_examinations_path }
       format.json { head :no_content }
     end
   end

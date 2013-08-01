@@ -73,3 +73,10 @@ div {
     list-style: square;
   }
 }
+
+.on_one_line {
+  text-align: left;
+  display: table-cell;
+  min-width: 10px;
+  padding-right: 10px;
+}

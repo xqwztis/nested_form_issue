@@ -1,30 +1,12 @@
-<p id="notice" class="noprint"><%= notice %></p>
-<h4>Протокол ультразвукового исследования
-  на аппарате Sono Ace R3 фирмы Medison</h4>
-(ул. Розы Люксембург, д.77, тел. 46-15-10)<br />
+<p id="notice"><%= notice %></p>
 <p>
-  <br />
-  <br />
-</p>
-<p>
-  Ф.И.О. <%= format_name(@patient) %>, возраст <%= age(@patient.dob) %> лет.<br />
-  <% unless @gyn_exam.menstruation_date.nil? %>
-    Дата последней менструации <%= l @gyn_exam.menstruation_date, :format => :long %>
-    (<%= @gyn_exam.menstruation_day %>-й день).
-  <% end %>
-</p>
-<p>
-  Длина тела матки: <%= @gyn_exam.uterine_length %><br />
+  Uterine length: <%= @gyn_exam.uterine_length %><br />
 </p>
 
-<%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.left_ovary, :orientation => "Левый" } %>
-<%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.right_ovary, :orientation => "Правый" } %>
+<%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.left_ovary, :orientation => "Left" } %>
+<%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.right_ovary, :orientation => "Right" } %>
 
 <p class="noprint">
-  <%= link_to 'Редактировать', edit_gynecologic_examination_path(@gyn_exam) %> |
-  <%= link_to 'Удалить', @gyn_exam, method: :delete, data: { confirm: 'Вы уверены?' } %>
-</p>
-
-<p class="noprint">
-  <input type="button" id="print" onclick="javascript:print()" value="Печать" />
+  <%= link_to 'Edit', edit_gynecologic_examination_path(@gyn_exam) %> |
+  <%= link_to 'Delete', @gyn_exam, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
