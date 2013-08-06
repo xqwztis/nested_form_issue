@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class GynecologicExamination::Ovary < ActiveRecord::Base
   has_one :gynecologic_examination
   has_many :formations, :class_name => 'GynecologicExamination::Ovary::Formation', :dependent => :destroy

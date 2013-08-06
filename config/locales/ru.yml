@@ -190,7 +190,7 @@ ru:
         uterine_adumbration_id: контуры
         uterine_shape_id: форма
         uterine_size_id: размеры
-        uterine_length: длина
+        uterine_length: Uterine length
         uterine_anteroposterior: передне-задний
         uterine_width: ширина
         myometric_structure_change_id: структура
@@ -215,7 +215,7 @@ ru:
         is_endocervix_cyst_multiple: множественная
       gynecologic_examination/ovary:
         visibility_id: визуализация
-        length: длина
+        length: Length
         thickness: толщина
         width: ширина
         size_id: размеры
@@ -231,9 +231,11 @@ ru:
         adumbration_id: контуры
         structure_id: структура
         content_id: содержимое
-        size: размеры
+        size: Formation size
         wall_thickness: толщина стенки
         comment: комментарий
+      gynecologic_examination/ovary/formation/chamber:
+        size: Chamber size
       gynecologic_examination/myometric_structure_node:
         localization_id: локализация
         depth_localization_id: по глубине

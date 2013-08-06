@@ -1,4 +1,3 @@
-# encoding: UTF-8
 class GynecologicExamination < ActiveRecord::Base
   belongs_to :left_ovary, :class_name => 'GynecologicExamination::Ovary', :dependent => :destroy
   belongs_to :right_ovary, :class_name => 'GynecologicExamination::Ovary', :dependent => :destroy
