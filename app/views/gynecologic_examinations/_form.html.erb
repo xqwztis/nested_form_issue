@@ -23,12 +23,6 @@
     <% end %>
   </fieldset>
   <br />
-  <fieldset>
-    <legend>Right ovary</legend>
-    <%= f.fields_for :right_ovary do |builder| %>
-      <%= render "ovary_form", :f => builder %>
-    <% end %>
-  </fieldset>
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -27,7 +27,6 @@ class GynecologicExaminationsController < ApplicationController
   def new
     @gyn_exam = GynecologicExamination.new
     @gyn_exam.build_left_ovary
-    @gyn_exam.build_right_ovary
 
     respond_to do |format|
       format.html # new.html.erb

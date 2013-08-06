@@ -4,7 +4,6 @@
 </p>
 
 <%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.left_ovary, :orientation => "Left" } %>
-<%= render :partial => "ovary_display", :locals => { :ovary => @gyn_exam.right_ovary, :orientation => "Right" } %>
 
 <p class="noprint">
   <%= link_to 'Edit', edit_gynecologic_examination_path(@gyn_exam) %> |
