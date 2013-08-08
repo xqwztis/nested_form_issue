@@ -164,9 +164,9 @@ ru:
     select:
       prompt: ! 'Выберите: '
     submit:
-      create: Создать %{model}
-      submit: Сохранить %{model}
-      update: Сохранить %{model}
+      create: Create %{model}
+      submit: Save %{model}
+      update: Save %{model}
     label:
       patient:
         dob: Дата рождения
@@ -334,8 +334,8 @@ ru:
     errors:
       <<: *errors
     models:
-      gynecologic_examination: гинекологическое обследование
-      patient: пациент
+      gynecologic_examination: gynecologic examination
+      patient: patient
     attributes:
       gynecologic_examination:
         menstruation_date: Дата последней менструации
